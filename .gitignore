@@ -1,6 +1,21 @@
-*.iml
+# ignore file
+
+#eclipse
 .classpath
-.idea/
 .project
 .settings/
+
+# intellij
+*.iml
+.idea/
+
+# maven
 target/
+
+# MacOS
+._*
+.DS_Store
+
+# Windows
+[Dd]esktop.ini
+Thumbs.db
