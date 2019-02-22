@@ -16,21 +16,10 @@
         <ignoreVersion type="regex">.*-alpha[-]?[0-9]+$</ignoreVersion>
         <!-- beta -->
         <ignoreVersion type="regex">.*[\.-]?[bB]eta[\.]?[0-9]*$</ignoreVersion>
-        <!--<ignoreVersion type="regex">.*-b[0-9]+$</ignoreVersion>-->
-        <!--<ignoreVersion type="regex">.*-beta$</ignoreVersion>-->
-        <!--<ignoreVersion type="regex">.*-Beta$</ignoreVersion>-->
-        <!--<ignoreVersion type="regex">.*-beta[0-9]+$</ignoreVersion>-->
-        <!--<ignoreVersion type="regex">.*-Beta[0-9]+$</ignoreVersion>-->
-        <!--<ignoreVersion type="regex">.*-beta\.[0-9]+$</ignoreVersion>-->
-        <!--<ignoreVersion type="regex">.*-Beta\.[0-9]+$</ignoreVersion>-->
-        <!--<ignoreVersion type="regex">.*\.beta[0-9]+$</ignoreVersion>-->
-        <!--<ignoreVersion type="regex">.*\.Beta[0-9]+$</ignoreVersion>-->
-        <!--<ignoreVersion type="regex">.*\.beta\.[0-9]+$</ignoreVersion>-->
-        <!--<ignoreVersion type="regex">.*\.Beta\.[0-9]+$</ignoreVersion>-->
         <!-- dev -->
         <ignoreVersion type="regex">.*-dev</ignoreVersion>
         <!-- release candidates -->
-        <!--<ignoreVersion type="regex">.*-M[0-9]+$</ignoreVersion>-->
-        <!--<ignoreVersion type="regex">.*-RC[0-9]+$</ignoreVersion>-->
+        <ignoreVersion type="regex">.*-M[0-9]*$</ignoreVersion>
+        <ignoreVersion type="regex">.*-RC[0-9]*$</ignoreVersion>
     </ignoreVersions>
 </ruleset>
