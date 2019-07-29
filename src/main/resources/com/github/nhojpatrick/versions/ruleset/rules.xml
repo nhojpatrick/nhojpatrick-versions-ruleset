@@ -21,5 +21,7 @@
         <!-- release candidates -->
         <ignoreVersion type="regex">.*-M[0-9]*$</ignoreVersion>
         <ignoreVersion type="regex">.*-RC[0-9]*$</ignoreVersion>
+        <!-- werid ones -->
+        <ignoreVersion type="regex">.*[.]pr[0-9]*$</ignoreVersion>
     </ignoreVersions>
 </ruleset>
