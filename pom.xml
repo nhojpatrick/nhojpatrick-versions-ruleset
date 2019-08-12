@@ -28,13 +28,11 @@
 	<build>
 		<pluginManagement>
 			<plugins>
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-clean-plugin</artifactId>
 					<version>3.1.0</version>
 				</plugin>
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -47,31 +45,32 @@
 						</compilerArgs>
 					</configuration>
 				</plugin>
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-deploy-plugin</artifactId>
 					<version>2.8.2</version>
 				</plugin>
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-enforcer-plugin</artifactId>
 					<version>3.0.0-M2</version>
 				</plugin>
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-failsafe-plugin</artifactId>
 					<version>2.22.1</version>
+					<configuration>
+						<argLine>${project.failsafe.argLine.jpms}</argLine>
+						<includes>
+							<include>**/*IT.java</include>
+						</includes>
+					</configuration>
 				</plugin>
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-install-plugin</artifactId>
 					<version>2.5.2</version>
 				</plugin>
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
@@ -84,49 +83,37 @@
 						</archive>
 					</configuration>
 				</plugin>
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
 					<version>3.0.1</version>
 				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-project-info-reports-plugin</artifactId>
-					<version>2.9</version>
-				</plugin>
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
 					<version>3.1.0</version>
 				</plugin>
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
 					<version>3.7.1</version>
 				</plugin>
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-source-plugin</artifactId>
 					<version>3.0.1</version>
 				</plugin>
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>2.22.1</version>
+					<configuration>
+						<argLine>${project.surefire.argLine.jpms}</argLine>
+						<excludes>
+							<exclude>**/*IT.java</exclude>
+						</excludes>
+					</configuration>
 				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-report-plugin</artifactId>
-					<version>2.22.1</version>
-				</plugin>
-
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>build-helper-maven-plugin</artifactId>
@@ -153,7 +140,6 @@
 						</execution>
 					</executions>
 				</plugin>
-
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>versions-maven-plugin</artifactId>
@@ -163,11 +149,9 @@
 						<rulesUri>file:///${session.executionRootDirectory}/src/main/resources/com/github/nhojpatrick/versions/ruleset/rules.xml</rulesUri>
 					</configuration>
 				</plugin>
-
 			</plugins>
 		</pluginManagement>
 		<plugins>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-enforcer-plugin</artifactId>
@@ -190,7 +174,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 		</plugins>
 	</build>
 	<!--profiles / -->
@@ -247,11 +230,15 @@
 		<downloadSources>true</downloadSources>
 		<downloadJavadocs>true</downloadJavadocs>
 		<generateBackupPoms>false</generateBackupPoms>
-		<!-- -->
-		<version.latest.junit4>4.12</version.latest.junit4>
-		<version.latest.hamcrest>1.3</version.latest.hamcrest>
-		<version.latest.testng>6.13.1</version.latest.testng>
-		<!-- -->
-		<project.Automatic-Module-Name></project.Automatic-Module-Name>
+		<sort.createBackupFile>false</sort.createBackupFile>
+		<sort.nrOfIndentSpace>-1</sort.nrOfIndentSpace>
+		<sort.pomFile>pom.xml</sort.pomFile>
+		<sort.sortDependencies>groupId,artifactId,version,scope</sort.sortDependencies>
+		<sort.sortModules>true</sort.sortModules>
+		<sort.sortOrderFile>src/main/resources/com/github/nhojpatrick/sortpom/sortorderfile/nhojpatrick.xml</sort.sortOrderFile>
+		<sort.sortPlugins>groupId,artifactId,version,scope</sort.sortPlugins>
+		<sort.sortProperties>false</sort.sortProperties>
+		<!-- JPMS -->
+		<project.Automatic-Module-Name>com.github.nhojpatrick.versions.ruleset</project.Automatic-Module-Name>
 	</properties>
 </project>
