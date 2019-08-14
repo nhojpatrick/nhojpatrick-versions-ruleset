@@ -29,6 +29,18 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
+					<groupId>com.github.ekryd.sortpom</groupId>
+					<artifactId>sortpom-maven-plugin</artifactId>
+					<version>2.10.0</version>
+					<dependencies>
+						<dependency>
+							<groupId>com.github.nhojpatrick.sortpom</groupId>
+							<artifactId>nhojpatrick-sortpom-sortorderfile</artifactId>
+							<version>1</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-clean-plugin</artifactId>
 					<version>3.1.0</version>
@@ -179,6 +191,26 @@
 	<!--profiles / -->
 	<profiles>
 		<profile>
+			<id>sortpom</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.github.ekryd.sortpom</groupId>
+						<artifactId>sortpom-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>sortpom-sort</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>sort</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
 			<id>versions</id>
 			<build>
 				<plugins>
@@ -232,7 +264,7 @@
 		<sort.pomFile>pom.xml</sort.pomFile>
 		<sort.sortDependencies>groupId,artifactId,version,scope</sort.sortDependencies>
 		<sort.sortModules>true</sort.sortModules>
-		<sort.sortOrderFile>src/main/resources/com/github/nhojpatrick/sortpom/sortorderfile/nhojpatrick.xml</sort.sortOrderFile>
+		<sort.sortOrderFile>com/github/nhojpatrick/sortpom/sortorderfile/nhojpatrick.xml</sort.sortOrderFile>
 		<sort.sortPlugins>groupId,artifactId,version,scope</sort.sortPlugins>
 		<sort.sortProperties>false</sort.sortProperties>
 		<!-- JPMS -->
