@@ -160,19 +160,6 @@
 		</pluginManagement>
 		<plugins>
 			<plugin>
-				<groupId>com.github.ekryd.sortpom</groupId>
-				<artifactId>sortpom-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>sortpom-sort</id>
-						<phase>validate</phase>
-						<goals>
-							<goal>sort</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-enforcer-plugin</artifactId>
 				<executions>
@@ -191,6 +178,19 @@
 								</requireMavenVersion>
 							</rules>
 						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.github.ekryd.sortpom</groupId>
+				<artifactId>sortpom-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>sortpom-sort</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>sort</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
