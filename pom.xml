@@ -53,13 +53,6 @@
 					<groupId>com.github.ekryd.sortpom</groupId>
 					<artifactId>sortpom-maven-plugin</artifactId>
 					<version>2.10.0</version>
-					<dependencies>
-						<dependency>
-							<groupId>com.github.nhojpatrick.sortpom</groupId>
-							<artifactId>nhojpatrick-sortpom-sortorderfile</artifactId>
-							<version>1.0</version>
-						</dependency>
-					</dependencies>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -229,6 +222,14 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>com/github/nhojpatrick/sortpom**</exclude>
+				</excludes>
+			</resource>
+		</resources>
 	</build>
 	<!--profiles / -->
 	<profiles>
@@ -309,7 +310,7 @@
 		<sort.pomFile>pom.xml</sort.pomFile>
 		<sort.sortDependencies>groupId,artifactId,version,scope</sort.sortDependencies>
 		<sort.sortModules>true</sort.sortModules>
-		<sort.sortOrderFile>com/github/nhojpatrick/sortpom/sortorderfile/nhojpatrick.xml</sort.sortOrderFile>
+		<sort.sortOrderFile>src/main/resources/com/github/nhojpatrick/sortpom/sortorderfile/nhojpatrick.xml</sort.sortOrderFile>
 		<sort.sortPlugins>groupId,artifactId,version,scope</sort.sortPlugins>
 		<sort.sortProperties>false</sort.sortProperties>
 		<!-- JPMS -->
