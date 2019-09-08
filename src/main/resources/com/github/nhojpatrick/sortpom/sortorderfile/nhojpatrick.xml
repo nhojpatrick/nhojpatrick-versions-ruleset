@@ -24,8 +24,24 @@
 	<licenses />
 	<scm />
 	<organization />
-	<build />
-	<profiles />
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId />
+					<artifactId />
+					<version />
+					<configuration />
+					<executions />
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<profiles>
+		<profile>
+			<id />
+		</profile>
+	</profiles>
 	<modules>
 		<module />
 	</modules>
