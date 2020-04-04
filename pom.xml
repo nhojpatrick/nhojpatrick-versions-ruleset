@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<!--parent / -->
 	<!--groupId / -->
-	<groupId>com.github.nhojpatrick.versions</groupId>
+	<groupId>com.github.nhojpatrick.qa</groupId>
 	<!--artifactId / -->
 	<artifactId>nhojpatrick-versions-ruleset</artifactId>
 	<!--packaging / -->
@@ -12,7 +12,7 @@
 	<!--name / -->
 	<name>Versions Rule Set</name>
 	<!--version / -->
-	<version>1.2-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<!--description / -->
 	<description>The Versions Rule Set project</description>
 	<!--url / -->
@@ -264,7 +264,7 @@
 			<resource>
 				<directory>src/main/resources</directory>
 				<excludes>
-					<exclude>com/github/nhojpatrick/sortpom**</exclude>
+					<exclude>com/github/nhojpatrick/qa/sortpom/sortorderfile**</exclude>
 				</excludes>
 			</resource>
 		</resources>
