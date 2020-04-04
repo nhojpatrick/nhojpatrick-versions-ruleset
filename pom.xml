@@ -81,14 +81,14 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-enforcer-plugin</artifactId>
-					<version>3.0.0-M2</version>
+					<version>${plugins.maven.maven-enforcer-plugin}</version>
 					<configuration>
 						<rules>
 							<requireJavaVersion>
 								<version>[1.8,9),[11,)</version>
 							</requireJavaVersion>
 							<requireMavenVersion>
-								<version>[3.6.2,)</version>
+								<version>[3.6.3]</version>
 							</requireMavenVersion>
 						</rules>
 					</configuration>
@@ -179,7 +179,7 @@
 				<artifactId>maven-enforcer-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>enforce-maven</id>
+						<id>enforce</id>
 						<goals>
 							<goal>enforce</goal>
 						</goals>
@@ -353,6 +353,8 @@
 		<project.build.outputEncoding>${project.custom.encoding}</project.build.outputEncoding>
 		<project.build.sourceEncoding>${project.custom.encoding}</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${project.custom.encoding}</project.reporting.outputEncoding>
+		<!-- plugin versions -->
+		<plugins.maven.maven-enforcer-plugin>3.0.0-M3</plugins.maven.maven-enforcer-plugin>
 		<!-- JPMS -->
 		<project.Automatic-Module-Name>com.github.nhojpatrick.versions.ruleset</project.Automatic-Module-Name>
 	</properties>
