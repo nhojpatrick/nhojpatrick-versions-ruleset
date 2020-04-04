@@ -61,7 +61,7 @@
 				<plugin>
 					<groupId>io.takari</groupId>
 					<artifactId>maven</artifactId>
-					<version>0.7.7</version>
+					<version>${plugins.takari.maven}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -369,6 +369,7 @@
 		<plugins.maven.maven-enforcer-plugin>3.0.0-M3</plugins.maven.maven-enforcer-plugin>
 		<plugins.maven.maven-help-plugin>3.2.0</plugins.maven.maven-help-plugin>
 		<plugins.maven.maven-site-plugin>3.9.0</plugins.maven.maven-site-plugin>
+		<plugins.takari.maven>0.7.7</plugins.takari.maven>
 		<!-- JPMS -->
 		<project.Automatic-Module-Name>com.github.nhojpatrick.versions.ruleset</project.Automatic-Module-Name>
 	</properties>
