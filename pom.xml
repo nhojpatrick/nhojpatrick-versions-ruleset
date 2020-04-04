@@ -59,6 +59,11 @@
 					<version>2.10.0</version>
 				</plugin>
 				<plugin>
+					<groupId>io.takari</groupId>
+					<artifactId>maven</artifactId>
+					<version>0.7.7</version>
+				</plugin>
+				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-clean-plugin</artifactId>
 					<version>3.1.0</version>
@@ -291,7 +296,6 @@
 					<plugin>
 						<groupId>io.takari</groupId>
 						<artifactId>maven</artifactId>
-						<version>0.7.7</version>
 						<executions>
 							<execution>
 								<id>wrapper-latest</id>
