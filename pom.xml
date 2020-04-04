@@ -186,19 +186,6 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>com.github.ekryd.sortpom</groupId>
-				<artifactId>sortpom-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>sortpom-sort</id>
-						<phase>validate</phase>
-						<goals>
-							<goal>sort</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>versions-maven-plugin</artifactId>
 				<executions>
@@ -263,6 +250,40 @@
 			</build>
 		</profile>
 		<profile>
+			<id>sortpom</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<defaultGoal>validate</defaultGoal>
+				<plugins>
+					<plugin>
+						<groupId>com.github.ekryd.sortpom</groupId>
+						<artifactId>sortpom-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>sortpom-sort</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>sort</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+			<properties>
+				<sort.createBackupFile>false</sort.createBackupFile>
+				<sort.nrOfIndentSpace>-1</sort.nrOfIndentSpace>
+				<sort.pomFile>pom.xml</sort.pomFile>
+				<sort.sortDependencies>groupId,artifactId,version,scope</sort.sortDependencies>
+				<sort.sortModules>true</sort.sortModules>
+				<sort.sortOrderFile>src/main/resources/com/github/nhojpatrick/sortpom/sortorderfile/nhojpatrick.xml</sort.sortOrderFile>
+				<sort.sortPlugins>groupId,artifactId,version,scope</sort.sortPlugins>
+				<sort.sortProperties>false</sort.sortProperties>
+			</properties>
+		</profile>
+		<profile>
 			<id>wrapper</id>
 			<build>
 				<defaultGoal>validate</defaultGoal>
@@ -322,15 +343,6 @@
 		<downloadSources>true</downloadSources>
 		<downloadJavadocs>true</downloadJavadocs>
 		<generateBackupPoms>false</generateBackupPoms>
-		<!-- sortpom -->
-		<sort.createBackupFile>false</sort.createBackupFile>
-		<sort.nrOfIndentSpace>-1</sort.nrOfIndentSpace>
-		<sort.pomFile>pom.xml</sort.pomFile>
-		<sort.sortDependencies>groupId,artifactId,version,scope</sort.sortDependencies>
-		<sort.sortModules>true</sort.sortModules>
-		<sort.sortOrderFile>src/main/resources/com/github/nhojpatrick/sortpom/sortorderfile/nhojpatrick.xml</sort.sortOrderFile>
-		<sort.sortPlugins>groupId,artifactId,version,scope</sort.sortPlugins>
-		<sort.sortProperties>false</sort.sortProperties>
 		<!-- JPMS -->
 		<project.Automatic-Module-Name>com.github.nhojpatrick.versions.ruleset</project.Automatic-Module-Name>
 	</properties>
