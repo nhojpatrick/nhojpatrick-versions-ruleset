@@ -56,7 +56,7 @@
 				<plugin>
 					<groupId>com.github.ekryd.sortpom</groupId>
 					<artifactId>sortpom-maven-plugin</artifactId>
-					<version>2.10.0</version>
+					<version>${plugins.github.ekryd.sortpom-maven-plugin}</version>
 				</plugin>
 				<plugin>
 					<groupId>io.takari</groupId>
@@ -354,6 +354,7 @@
 		<project.build.sourceEncoding>${project.custom.encoding}</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${project.custom.encoding}</project.reporting.outputEncoding>
 		<!-- plugin versions -->
+		<plugins.github.ekryd.sortpom-maven-plugin>2.11.0</plugins.github.ekryd.sortpom-maven-plugin>
 		<plugins.maven.maven-enforcer-plugin>3.0.0-M3</plugins.maven.maven-enforcer-plugin>
 		<!-- JPMS -->
 		<project.Automatic-Module-Name>com.github.nhojpatrick.versions.ruleset</project.Automatic-Module-Name>
