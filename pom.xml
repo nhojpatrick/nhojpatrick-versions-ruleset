@@ -372,7 +372,10 @@
 				</plugins>
 			</build>
 			<properties>
+				<downloadJavadocs>false</downloadJavadocs>
+				<downloadSources>false</downloadSources>
 				<maven.version.rules>file:///${session.executionRootDirectory}/src/main/resources/com/github/nhojpatrick/versions/ruleset/rules.xml</maven.version.rules>
+				<sort.skip>true</sort.skip>
 			</properties>
 		</profile>
 		<profile>
